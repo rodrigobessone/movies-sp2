@@ -46,12 +46,7 @@ const insertMovies = async (req: Request, res: Response): Promise<Response> => {
     const queryResult = await client.query(queryConfig);
 
     return res.status(201).json(queryResult.rows[0]);
-  } catch (error: any) {
-    if (error.message.includes('duplicate key value violates unique constraint')) {
-      return res.status(409).json({
-        message: 'Name already registered',
-      });
-    }
+  } catch (error) {
     return res.status(500).json({
       message: 'Status server error',
     });
