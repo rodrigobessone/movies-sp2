@@ -5,3 +5,5 @@ CREATE TABLE IF NOT EXISTS movies (
     duration INTEGER NOT NULL,
     price INTEGER NOT NULL
 );
+
+
